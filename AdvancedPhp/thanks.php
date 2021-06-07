@@ -1,8 +1,8 @@
 <?php
 //Méthodes de filtres
   $pattern = '/[^a-zA-Z0-9'  . " " . ']/u';
-  $numberPattern = '/[^0-9'  . " " . ']/u';
-  $mailPattern = '/[^a-zA-Z0-9.@'  . " " . ']/u';
+  $numberPattern = '/0+[0-9]{9}$/im';
+  $mailPattern = '/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/im';
   $messagePattern = '/[^a-zA-Z0-9,.:!?;€'  . " " . ']/u';
 //Eléments à filtrer
   $firstName = preg_replace($pattern, '', $_POST['user_firstName']);
